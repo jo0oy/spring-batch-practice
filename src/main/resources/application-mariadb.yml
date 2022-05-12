@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    hikari:
+      jdbc-url: jdbc:mariadb://127.0.0.1:3306/batch_db?characterEncoding=UTF-8&serverTimeZone=UTC&rewriteBatchedStatements=true
+      driver-class-name: org.mariadb.jdbc.Driver
+      username: root
+      password: root1234
+
+  batch:
+    jdbc:
+      initialize-schema: never
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        default_batch_fetch_size: 500
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+
